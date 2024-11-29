@@ -16,31 +16,28 @@ export default function Home() {
     'Database + Auth',
     'AI support'
   ]
-  
+
   return (
     <>
-      <header className="w-full fixed">
-        <div className="flex justify-between m-6 mx-12">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-primary"></div>
-            <p className={`text-2xl ${montserratAlternates.className}`}>webby</p>
-          </div>
+      <header className="w-full backdrop-blur-sm w- fixed">
+        <div className="flex justify-between m-4 mx-12">
+          <img src="/webby-text-logo.svg" alt="webby logo" />
           <div className="flex gap-2">
             <Button variant={"ghost"}>Product</Button>
             <Button variant={"ghost"}>Pricing</Button>
             <Button variant={"ghost"}>Docs</Button>
-          <Button>Start now</Button>
+            <Button>Try Webby</Button>
           </div>
         </div>
-        </header>
+      </header>
       <section className="container min-h-screen flex items-center max-w-7xl mx-auto">
         <div className="flex flex-col items-start gap-9">
-          <h1 className={`${montserratAlternates.className} text-7xl lg:text-6xl xl:text-8xl font-bold tracking-tight`}>
+          <h1 className={`${montserratAlternates.className} text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight`}>
             <span className="font-bold">Build</span> fast<br />
             <span className="font-bold">Customize</span> fully<br />
             <span className="font-bold">Launch</span> anywhere
           </h1>
-          <h2 className="text-2xl font-extralight">The first fully customizable full-stack no-code<br/>web app builder</h2>
+          <h2 className="text-2xl font-extralight">The first fully customizable full-stack no-code<br />web app builder</h2>
           <div className="ml-4">
             {pros.map((p, index) => (
               <div className='flex gap-2 mb-2' key={index}>
@@ -50,9 +47,10 @@ export default function Home() {
             ))}
           </div>
 
-          <Button className="text-xl" size={"lg"}>Build your idea now</Button>
+          <Button className="text-xl hover:shadow-lg hover:shadow-primary/30 hover:translate-y-[-3px] transition-all duration-300" size={"lg"}>Build your idea now</Button>
         </div>
       </section>
+      <section className="container min-h-screen flex items-center max-w-7xl mx-auto"></section>
     </>
   );
 }
