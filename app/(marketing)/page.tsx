@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { Montserrat_Alternates } from "next/font/google";
 import { Check } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const montserratAlternates = Montserrat_Alternates({
   subsets: ['latin'],
@@ -19,19 +20,21 @@ export default function Home() {
 
   return (
     <>
-      <header className="w-full backdrop-blur-sm w- fixed">
-        <div className="flex justify-between m-4 mx-12">
-          <img src="/webby-text-logo.svg" alt="webby logo" />
-          <div className="flex gap-2">
+      <header className="w-full backdrop-blur-sm bg-background/80 fixed">
+        <div className="container flex justify-between my-4 xl:mx-auto">
+          <div className="flex items-center gap-2">
+            <img className="mr-16" src="/webby-text-logo.svg" alt="webby logo" />
             <Button variant={"ghost"}>Product</Button>
             <Button variant={"ghost"}>Pricing</Button>
             <Button variant={"ghost"}>Docs</Button>
-            <Button>Try Webby</Button>
           </div>
+          <Link href="/dashboard">
+            <Button>Try Webby</Button>
+          </Link>
         </div>
       </header>
-      <section className="container min-h-screen flex items-center max-w-7xl mx-auto">
-        <div className="flex flex-col items-start gap-9">
+      <section className="container flex items-center mx-auto">
+        <div className="flex flex-col items-start mt-48 gap-9">
           <h1 className={`${montserratAlternates.className} text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight`}>
             <span className="font-bold">Build</span> fast<br />
             <span className="font-bold">Customize</span> fully<br />
@@ -47,7 +50,9 @@ export default function Home() {
             ))}
           </div>
 
-          <Button className="text-xl hover:shadow-lg hover:shadow-primary/30 hover:translate-y-[-3px] transition-all duration-300" size={"lg"}>Build your idea now</Button>
+          <Link href="/dashboard">
+            <Button className="text-xl hover:shadow-lg hover:shadow-primary/30 hover:translate-y-[-3px] transition-all duration-300" size={"lg"}>Build your idea now</Button>
+          </Link>
         </div>
       </section>
       <section className="container min-h-screen flex items-center max-w-7xl mx-auto"></section>
