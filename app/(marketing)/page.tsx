@@ -20,19 +20,21 @@ export default function Home() {
 
   return (
     <>
-      <header className="w-full backdrop-blur-sm bg-background/80 fixed">
-        <div className="container flex justify-between my-4 xl:mx-auto">
+      <section className="w-full backdrop-blur-sm bg-background/80 fixed">
+        <div className="container flex justify-between my-4">
           <div className="flex items-center gap-2">
             <img className="mr-16" src="/webby-text-logo.svg" alt="webby logo" />
             <Button variant={"ghost"}>Product</Button>
             <Button variant={"ghost"}>Pricing</Button>
-            <Button variant={"ghost"}>Docs</Button>
+            <Link href='./docs'>
+              <Button variant={"ghost"}>Docs</Button>
+            </Link>
           </div>
           <Link href="/dashboard">
             <Button>Try Webby</Button>
           </Link>
         </div>
-      </header>
+      </section>
       <section className="container flex items-center mx-auto">
         <div className="flex flex-col items-start mt-48 gap-9">
           <h1 className={`${montserratAlternates.className} text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight`}>
